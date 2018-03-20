@@ -5,10 +5,10 @@ import './CardContainer.css';
 const CardContainer = () => {
   return (
     <div>
-      <p>I'm a card container!</p>
+      <p>I'm a card container!<span>&#x1F39F;</span></p>
       <Card />
     </div>
-  )
-}
+  );
+};
 
 export default CardContainer;

@@ -5,8 +5,8 @@ const Favorites = () => {
 
   return (
     <button>Favorites: <span>0</span></button>
-  )
-}
+  );
+};
 
 
 export default Favorites;
