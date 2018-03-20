@@ -1,0 +1,9 @@
+.right-side {
+  text-align: center;
+  width: 75%;
+  background-color: #E3EDFE;
+}
+
+.to-flex {
+  display: flex;
+}
