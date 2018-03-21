@@ -28,23 +28,65 @@ const getHomeWorld = async (peopleArray) => {
 };
 
 const getSpecies = async (peopleArray) => {
-  const unresolvedPeople = await peopleArray.map(async (person) => {
-    const response = await fetch(person.species);
-    const speciesData = await response.json();
-    return ({
-      name: person.name,
-      homeworld: person.homeworld,
-      population: person.population,
-      species: speciesData.name
+  try {
+    const unresolvedPeople = await peopleArray.map(async (person) => {
+      const response = await fetch(person.species);
+      const speciesData = await response.json();
+      return ({
+        name: person.name,
+        homeworld: person.homeworld,
+        population: person.population,
+        species: speciesData.name
+      });
     });
-  });
-  return Promise.all(unresolvedPeople);
+    return Promise.all(unresolvedPeople);
+  } catch (error) {
+    return 'error';
+  }
 };
 
 const cleanPlanetData = async (planetsArray) => {
-  // const unresolvedPeople = 
-  console.log(planetsArray);
+  try {
+    const unresolvedPlanets = await planetsArray.map(async (planet) => {
+      const residents = await getResidents(planet.residents);
+      return ({
+        planet: planet.name,
+        climate: planet.climate, 
+        population: planet.population,
+        terrain: planet.terrain,
+        residents: residents
+      });
+    });
+    return Promise.all(unresolvedPlanets);
+  } catch (error) {
+    return 'error';
+  }
 };
 
-export { cleanMovieData, cleanPeopleData, cleanPlanetData };
+const getResidents = async (residentsUrlArray) => {
+  try {
+    const unresolvedResidents = await residentsUrlArray.map(async(url) => {
+      const response = await fetch(url);
+      const residentObject = await response.json();
+      return residentObject.name;
+    });
+    return Promise.all(unresolvedResidents);
+  } catch (error) {
+    return 'error';
+  }
+};
+
+const cleanVehicleData = async (vehiclesArray) => {
+  const modelArray = vehiclesArray.map((vehicle) => {
+    return {
+      name: vehicle.name,
+      model: vehicle.model,
+      class: vehicle.vehicle_class,
+      passengers: vehicle.passengers
+    };
+  });
+  return modelArray;
+};
+
+export { cleanMovieData, cleanPeopleData, cleanPlanetData, cleanVehicleData };
 

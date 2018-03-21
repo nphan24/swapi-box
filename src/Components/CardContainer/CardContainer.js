@@ -3,7 +3,6 @@ import Card from '../Card/Card.js';
 import './CardContainer.css';
 
 const CardContainer = ({ people }) => {
-  console.log('cardContainer', people);
   const peopleCards = people.map((person) => {
     return <Card
       key = {person.name}
@@ -16,7 +15,6 @@ const CardContainer = ({ people }) => {
 
   return (
     <div>
-      <p>I'm a card container!<span>&#x1F39F;</span></p>
       {peopleCards}
     </div>
   );

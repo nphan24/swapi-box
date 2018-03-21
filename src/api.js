@@ -1,4 +1,4 @@
-import { cleanMovieData, cleanPeopleData, cleanPlanetData } from './cleaner.js';
+import { cleanMovieData, cleanPeopleData, cleanPlanetData, cleanVehicleData } from './cleaner.js';
 
 const root = 'https://swapi.co/api/';
 
@@ -29,15 +29,25 @@ const getPlanetData = async () => {
   try {
     const response = await fetch(`${root}planets`);
     const data = await response.json();
-    console.log('data', data);
     const planetObject = cleanPlanetData(data.results);
-    // return planetObject;
+    return planetObject;
   } catch (error) {
     return 'error';
   }
 };
 
-export { getMovieData, getPeopleData, getPlanetData };
+const getVehicleData = async () => {
+  try {
+    const response = await fetch(`${root}vehicles`);
+    const data = await response.json();
+    const vehiclesObject = cleanVehicleData(data.results);
+    return vehiclesObject;
+  } catch (error) {
+    return 'error';
+  }
+}
+
+export { getMovieData, getPeopleData, getPlanetData, getVehicleData };
 
 
 
