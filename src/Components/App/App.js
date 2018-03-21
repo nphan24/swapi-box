@@ -3,7 +3,7 @@ import Favorites from '../Favorites/Favorites';
 import CardContainer from '../CardContainer/CardContainer';
 import Nav from '../Nav/Nav';
 import Summary from '../Summary/Summary';
-import { getMovieData, getPeopleData, getPlanetData } from '../../api';
+import { getMovieData, getPeopleData, getPlanetData, getVehicleData } from '../../api';
 import './App.css';
 
 class App extends Component {
@@ -20,20 +20,22 @@ class App extends Component {
 
   async componentDidMount() {
     const film = await getMovieData();
+    // const planets = await getPlanetData();
+    // const vehicles = await getVehicleData();
     this.setState({film}); 
   }
 
   fetchData = async (dataType) => {
     const map = {
       'people': getPeopleData(),
-      'planets': getPlanetData()
+      'planets': getPlanetData(),
+      'vehicles': getVehicleData()
     };
     const fetchCall = await map[dataType];
     this.setState({
       [dataType]: fetchCall
     });
   }
-
 
   render() {
     const { film } = this.state;
