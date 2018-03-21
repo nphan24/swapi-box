@@ -35,12 +35,12 @@
   animation: crawl 60s linear infinite;
 }
 
-.crawl > .title {
+.crawl .title {
   font-size: 90%;
   text-align: center;
 }
 
-.crawl > .title h1 {
+.crawl .title h1 {
   margin: 0 0 100px;
   text-transform: uppercase;
 }
