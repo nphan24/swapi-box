@@ -7,16 +7,35 @@ const cleanMovieData = (data) => {
   };
 };
 
-const cleanPeopleData = (peopleData) => {
-  console.log(peopleData);
-  return {
-    people: peopleData.name,
-    homeworld: peopleData.homeworld,
-    species: 
-  };
+const cleanPeopleData = async (peopleArray) => {
+  const peopleWithHomeWorld = await getHomeWorld(peopleArray);
+  const peopleObject = await getSpecies(peopleWithHomeWorld);
+  return peopleObject;
 };
 
+const getHomeWorld = async (peopleArray) => {
+  const unresolvedPeople = await peopleArray.map(async (person) => {
+    const response = await fetch(person.homeworld);
+    const data = await response.json();
+    const { name, population } = data;
+    return ({ ...person, homeworld: name, population });
+  });
+  return Promise.all(unresolvedPeople);
+};
 
+const getSpecies = async (peopleArray) => {
+  const unresolvedPeople = await peopleArray.map(async (person) => {
+    const response = await fetch(person.species);
+    const speciesData = await response.json();
+    return ({
+      name: person.name,
+      homeworld: person.homeworld,
+      population: person.population,
+      species: speciesData.name
+    });
+  });
+  return Promise.all(unresolvedPeople);
+};
 
 export { cleanMovieData, cleanPeopleData }
 

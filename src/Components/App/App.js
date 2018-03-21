@@ -21,11 +21,11 @@ class App extends Component {
   async componentDidMount() {
     const film = await getMovieData();
     const people = await getPeopleData();
-    this.setState({film}) 
+    this.setState({film, people}) 
   }
 
   render() {
-    const { favorites, film } = this.state;
+    const { film } = this.state;
 
     return (
       <div className="App">
