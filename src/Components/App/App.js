@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Favorites from '../Favorites/Favorites';
 import CardContainer from '../CardContainer/CardContainer';
 import Nav from '../Nav/Nav';
 import Summary from '../Summary/Summary';
+import Home from '../Home/Home';
 import { getMovieData, getPeopleData, getPlanetData, getVehicleData } from '../../api';
 import './App.css';
 
@@ -14,8 +16,7 @@ class App extends Component {
       film: [],
       people: [],
       planets: [],
-      vehicles: [],
-      info: []
+      vehicles: []
     };
   }
 
@@ -26,18 +27,6 @@ class App extends Component {
     const vehicles = await getVehicleData();
     this.setState({film, people, planets, vehicles}); 
   }
-
-  // fetchData = async (dataType) => {
-  //   const map = {
-  //     'people': getPeopleData(),
-  //     'planets': getPlanetData(),
-  //     'vehicles': getVehicleData()
-  //   };
-  //   const fetchCall = await map[dataType];
-  //   this.setState({
-  //     [dataType]: fetchCall
-  //   });
-  // }
 
   setInfo = (dataType) => {
     this.setState({
@@ -56,8 +45,11 @@ class App extends Component {
             <h1 className="title">Swapi-Box</h1>
             <Nav setInfo={this.setInfo}/>
             <Favorites />
+            <Route exact path='/' component={Home} />
             <CardContainer 
-              info={this.state.info}
+              people={this.state.people}
+              planets={this.state.planets}
+              vehicles={this.state.vehicles}
             />
           </div>
         </div>

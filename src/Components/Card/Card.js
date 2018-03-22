@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ info }) => {
+const Card = ({ info }) => { 
   const objectKeys = Object.keys(info);
   const cardsInfo = objectKeys.map((element, index) => {
     return <p className='card-info' key={index}>{element}: {info[element]}</p>;
