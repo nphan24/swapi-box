@@ -1,18 +1,28 @@
+import { Switch, Route } from 'react-router-dom';
 import React from 'react';
-import Card from '../Card/Card.js';
+import People from '../People/People';
+import Planets from '../Planets/Planets';
+import Vehicles from '../Vehicles/Vehicles';
 import './CardContainer.css';
 
-const CardContainer = ({ info }) => {
-  const displayCards = info.map((data) => {
-    return <Card 
-      key={data.name}
-      info={data}
-    />;
-  });
-
+const CardContainer = ({ people, planets, vehicles }) => {
+  
   return (
     <div className='card-container'>
-      {displayCards}
+      <Switch>
+        <Route 
+          exact path='/people' 
+          component={() => <People info={people}/>}
+        />
+        <Route
+          exact path='/planets'
+          component={() => <Planets info={planets} />}
+        />
+        <Route
+          exact path='/vehicles'
+          component={() => <Vehicles info={vehicles} />}
+        />
+      </Switch>
     </div>
   );
 };

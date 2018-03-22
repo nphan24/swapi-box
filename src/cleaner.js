@@ -50,7 +50,7 @@ const cleanPlanetData = async (planetsArray) => {
     const unresolvedPlanets = await planetsArray.map(async (planet) => {
       const residents = await getResidents(planet.residents);
       return ({
-        planet: planet.name,
+        name: planet.name,
         climate: planet.climate, 
         population: planet.population,
         terrain: planet.terrain,
