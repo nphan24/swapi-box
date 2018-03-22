@@ -14,26 +14,34 @@ class App extends Component {
       film: [],
       people: [],
       planets: [],
-      vehicles: []
+      vehicles: [],
+      info: []
     };
   }
 
   async componentDidMount() {
     const film = await getMovieData();
-    // const planets = await getPlanetData();
-    // const vehicles = await getVehicleData();
-    this.setState({film}); 
+    const people = await getPeopleData();
+    const planets = await getPlanetData();
+    const vehicles = await getVehicleData();
+    this.setState({film, people, planets, vehicles}); 
   }
 
-  fetchData = async (dataType) => {
-    const map = {
-      'people': getPeopleData(),
-      'planets': getPlanetData(),
-      'vehicles': getVehicleData()
-    };
-    const fetchCall = await map[dataType];
+  // fetchData = async (dataType) => {
+  //   const map = {
+  //     'people': getPeopleData(),
+  //     'planets': getPlanetData(),
+  //     'vehicles': getVehicleData()
+  //   };
+  //   const fetchCall = await map[dataType];
+  //   this.setState({
+  //     [dataType]: fetchCall
+  //   });
+  // }
+
+  setInfo = (dataType) => {
     this.setState({
-      [dataType]: fetchCall
+      info: this.state[dataType]
     });
   }
 
@@ -45,10 +53,12 @@ class App extends Component {
         <div className='to-flex'>
           <Summary film={film}/>
           <div className='right-side'>
-            <h1 className="title">Welcome to Swapi-Box</h1>
+            <h1 className="title">Swapi-Box</h1>
+            <Nav setInfo={this.setInfo}/>
             <Favorites />
-            <Nav fetchData={this.fetchData}/>
-            <CardContainer people={this.state.people}/>
+            <CardContainer 
+              info={this.state.info}
+            />
           </div>
         </div>
       </div>

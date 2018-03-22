@@ -7,3 +7,9 @@
 .to-flex {
   display: flex;
 }
+
+.title {
+  border-bottom: 2px solid grey;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}

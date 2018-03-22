@@ -1,13 +1,17 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({name, homeworld, population, species}) => {
+const Card = ({ info }) => {
+  const objectKeys = Object.keys(info);
+  const cardsInfo = objectKeys.map((element, index) => {
+    return <p className='card-info' key={index}>{element}: {info[element]}</p>;
+  });
+
   return (
-    <div>
-      <h3>{name}</h3>
-      <h4>{homeworld}</h4>
-      <p>{population}</p>
-      <p>{species}</p>
+    <div className='people-card'>
+      <h3>{info.name}</h3>
+      {cardsInfo}
+      <button className='card-favorite-button'>Favorites</button>
     </div>
   );
 };
