@@ -1,0 +1,13 @@
+.favorite-button {
+  width: 120px;
+  height: 30px;
+  border-radius: 30px 30px 30px 30px;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+.favorite-button:hover {
+  background-color: black;
+  color: #FADA65;
+  font-size: 1em;
+}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600');
+
+.people-card {
+  width: 260px;
+  min-width: 220px;
+  border: 2px solid black;
+  min-height: 350px;
+  margin-top: 15px;
+  border-radius: 30px 30px 30px 30px;
+  background-image: url('../../images/background.jpg');
+  background-size: cover;
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.card-favorite-button {
+  width: 80px;
+  height: 30px;
+  font-size: .8em;
+  border-radius: 30px 30px 30px 30px;
+  margin-top: 15px;
+}
+
+.card-favorite-button:hover {
+  background-color: #E5EDFC;
+}
+
+.card-info {
+  margin: 0;
+}

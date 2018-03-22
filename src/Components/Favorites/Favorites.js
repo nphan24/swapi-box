@@ -4,7 +4,7 @@ import './Favorites.css';
 const Favorites = () => {
 
   return (
-    <button>Favorites: <span>0</span></button>
+    <button className='favorite-button'>Favorites: <span>0</span></button>
   );
 };
 
