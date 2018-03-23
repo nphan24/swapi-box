@@ -1,12 +1,27 @@
 import React from 'react';
+import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 import './Favorites.css';
 
-const Favorites = () => {
+const Favorites = ({ info, setFavorites }) => {
+  const displayCards = info.map((favorite) => {
+    return <Card 
+      key={favorite.name} 
+      info={favorite} 
+      setFavorites={setFavorites} 
+    />;
+  });
 
   return (
-    <button className='favorite-button'>Favorites: <span>0</span></button>
+    <div className='card-container'>
+      {displayCards}
+    </div>
   );
 };
 
+Favorites.propTypes = {
+  info: PropTypes.object,
+  setFavorites: PropTypes.func
+};
 
 export default Favorites;
