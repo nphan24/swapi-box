@@ -44,7 +44,7 @@ class App extends Component {
       planets: planets,
       vehicles: vehicles
     });
-  }
+  };
 
   // setInfo = async (dataType) => {
   //   const map = {
@@ -67,7 +67,7 @@ class App extends Component {
       favorites = favorites.filter(info => info.name !== category.name);
     }
     this.setState({favorites});
-  }
+  };
 
   render() {
     const { film } = this.state;
@@ -83,7 +83,7 @@ class App extends Component {
             <div className='right-side'>
               <h1 className="main-title">Swapi-Box</h1>
               <Nav setInfo={this.setInfo}/>
-              <NavLink to='/favorites'>Favorites: <span>{this.state.favorites.length}</span></NavLink>
+              <NavLink to='/favorites'>View Favorites: <span>{this.state.favorites.length}</span></NavLink>
               <Route exact path='/' component={Home} />
               <CardContainer 
                 people={this.state.people}

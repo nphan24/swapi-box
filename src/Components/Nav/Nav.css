@@ -6,6 +6,7 @@
   margin-bottom: 20px;
 }
 
-.nav-link active {
-  background-color: yellow;
+.active {
+  background-color: black;
+  color: #E6C85D;
 }
