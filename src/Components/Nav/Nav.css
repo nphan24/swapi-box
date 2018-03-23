@@ -1,24 +1,11 @@
-.active {
-  color: white;
+.nav-link {
+  margin: 20px;
 }
 
-.nav-button {
-  width: 100px;
-  height: 30px;
-  font-size: 1em;
-  margin: 15px;
-  border-radius: 30px 30px 30px 30px;
-  /* border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 20px; */
+.nav-div {
+  margin-bottom: 20px;
 }
 
-.nav-button:hover {
-  background-color: black;
-  color: #FADA65;
+.nav-link active {
+  background-color: yellow;
 }
-
-.nav-div a.active {
-  background-color: red;
-}
-
