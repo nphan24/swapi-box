@@ -31,6 +31,6 @@ describe('Card', () => {
 
   it('should call setFavorites on click', () => {
     wrapper.find('button').simulate('click');
-    expect(setFavorites).toHaveBeenCalledWith(mockObject);
+    expect(mockFunction).toHaveBeenCalledWith(mockObject);
   });
 });

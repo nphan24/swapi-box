@@ -22,41 +22,24 @@ class App extends Component {
 
   async componentDidMount() {
     const film = await getMovieData();
-    const people = await getPeopleData();
-    const planets = await getPlanetData();
-    const vehicles = await getVehicleData();
+
     this.setState({
       film: film, 
-      people: people, 
-      planets: planets, 
-      vehicles: vehicles,
       isloaded: true
     }); 
   }
 
-  // setInfo = async (dataType) => {
-  //   const people = await getPeopleData();
-  //   const planets = await getPlanetData();
-  //   const vehicles = await getVehicleData();
-  //   this.setState({
-  //     info: this.state[dataType],
-  //     people: people,
-  //     planets: planets,
-  //     vehicles: vehicles
-  //   });
-  // };
-
-  // setInfo = async (dataType) => {
-  //   const map = {
-  //     'people': await getPeopleData(),
-  //     'planets': await getPlanetData(),
-  //     'vehicles': await getVehicleData()
-  //   };
-  //   const fetchCall = await map[dataType];
-  //   this.setState({
-  //     [dataType]:fetchCall
-  //   });
-  // }
+  setInfo = async (dataType) => {
+    const map = {
+      'people': await getPeopleData(),
+      'planets': await getPlanetData(),
+      'vehicles': await getVehicleData()
+    };
+    const fetchCall = await map[dataType];
+    this.setState({
+      [dataType]:fetchCall
+    });
+  }
 
   setFavorites = (category) => {
     let favorites = [...this.state.favorites];

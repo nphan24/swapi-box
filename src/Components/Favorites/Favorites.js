@@ -26,7 +26,7 @@ const Favorites = ({ info, setFavorites }) => {
 };
 
 Favorites.propTypes = {
-  info: PropTypes.object,
+  info: PropTypes.array,
   setFavorites: PropTypes.func
 };
 
