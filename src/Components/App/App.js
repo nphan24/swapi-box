@@ -22,29 +22,29 @@ class App extends Component {
 
   async componentDidMount() {
     const film = await getMovieData();
-    // const people = await getPeopleData();
-    // const planets = await getPlanetData();
-    // const vehicles = await getVehicleData();
-    this.setState({
-      film: film, 
-      // people: people, 
-      // planets: planets, 
-      // vehicles: vehicles,
-      isloaded: true
-    }); 
-  }
-
-  setInfo = async (dataType) => {
     const people = await getPeopleData();
     const planets = await getPlanetData();
     const vehicles = await getVehicleData();
     this.setState({
-      info: this.state[dataType],
-      people: people,
-      planets: planets,
-      vehicles: vehicles
-    });
-  };
+      film: film, 
+      people: people, 
+      planets: planets, 
+      vehicles: vehicles,
+      isloaded: true
+    }); 
+  }
+
+  // setInfo = async (dataType) => {
+  //   const people = await getPeopleData();
+  //   const planets = await getPlanetData();
+  //   const vehicles = await getVehicleData();
+  //   this.setState({
+  //     info: this.state[dataType],
+  //     people: people,
+  //     planets: planets,
+  //     vehicles: vehicles
+  //   });
+  // };
 
   // setInfo = async (dataType) => {
   //   const map = {
@@ -85,7 +85,7 @@ class App extends Component {
               <Nav setInfo={this.setInfo}/>
               <NavLink to='/favorites'>View Favorites: <span>{this.state.favorites.length}</span></NavLink>
               <Route exact path='/' component={Home} />
-              <CardContainer 
+              <CardContainer
                 people={this.state.people}
                 planets={this.state.planets}
                 vehicles={this.state.vehicles}
@@ -98,5 +98,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
