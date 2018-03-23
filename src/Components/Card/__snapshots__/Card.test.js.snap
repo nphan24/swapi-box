@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    info={
+        Object {
+            "homeworld": "Tatooine",
+            "name": "Cat",
+            "population": "5",
+          }
+    }
+    setFavorites={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3
+          className="object-name"
+>
+          Cat
+</h3>,
+        Array [
+          <p
+            className="card-info"
+>
+            homeworld
+            : 
+            Tatooine
+</p>,
+          <p
+            className="card-info"
+>
+            population
+            : 
+            5
+</p>,
+        ],
+        <button
+          className="card-favorite-button"
+          onClick={[Function]}
+>
+          Favorites
+</button>,
+      ],
+      "className": "each-card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Cat",
+          "className": "object-name",
+        },
+        "ref": null,
+        "rendered": "Cat",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "homeworld",
+            ": ",
+            "Tatooine",
+          ],
+          "className": "card-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "homeworld",
+          ": ",
+          "Tatooine",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "population",
+            ": ",
+            "5",
+          ],
+          "className": "card-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "population",
+          ": ",
+          "5",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Favorites",
+          "className": "card-favorite-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Favorites",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3
+            className="object-name"
+>
+            Cat
+</h3>,
+          Array [
+            <p
+              className="card-info"
+>
+              homeworld
+              : 
+              Tatooine
+</p>,
+            <p
+              className="card-info"
+>
+              population
+              : 
+              5
+</p>,
+          ],
+          <button
+            className="card-favorite-button"
+            onClick={[Function]}
+>
+            Favorites
+</button>,
+        ],
+        "className": "each-card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Cat",
+            "className": "object-name",
+          },
+          "ref": null,
+          "rendered": "Cat",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "homeworld",
+              ": ",
+              "Tatooine",
+            ],
+            "className": "card-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "homeworld",
+            ": ",
+            "Tatooine",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "population",
+              ": ",
+              "5",
+            ],
+            "className": "card-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "population",
+            ": ",
+            "5",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Favorites",
+            "className": "card-favorite-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Favorites",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

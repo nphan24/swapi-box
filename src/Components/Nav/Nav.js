@@ -9,13 +9,16 @@ const Nav = ({ setInfo }) => {
     
       <NavLink to='/' className='nav-link'>Home</NavLink>
 
-      <NavLink to='/people' className='nav-link' onClick={() => setInfo('people')}>People
+      <NavLink to='/people' className='nav-link' 
+        onClick={() => setInfo('people')}>People
       </NavLink>
 
-      <NavLink to='/planets' className='nav-link' onClick={() => setInfo('planets')}>Planets
+      <NavLink to='/planets' className='nav-link' 
+        onClick={() => setInfo('planets')}>Planets
       </NavLink>
 
-      <NavLink to='/vehicles' className='nav-link' onClick={() => setInfo('vehicles')}> Vehicles
+      <NavLink to='/vehicles' className='nav-link' 
+        onClick={() => setInfo('vehicles')}>Vehicles
       </NavLink>
     </div>
   );

@@ -19,7 +19,7 @@ const Planets = ({ info, setFavorites }) => {
 };
 
 Planets.propTypes = {
-  info: PropTypes.func,
+  info: PropTypes.array,
   setFavorites: PropTypes.func
 };
 

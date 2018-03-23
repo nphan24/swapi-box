@@ -12,7 +12,7 @@ const CardContainer = ({ people, planets, vehicles, setFavorites, favorites }) =
     <div>
       <Switch>
         <Route 
-          exact path='/people' 
+          path='/people' 
           component={() => <People info={people} setFavorites={setFavorites}/>}
         />
         <Route
@@ -20,7 +20,7 @@ const CardContainer = ({ people, planets, vehicles, setFavorites, favorites }) =
           component={() => <Planets info={planets} setFavorites={setFavorites}/>}
         />
         <Route
-          exact path='/vehicles'
+          path='/vehicles'
           component={() => <Vehicles info={vehicles} setFavorites={setFavorites} />}
         />
         <Route

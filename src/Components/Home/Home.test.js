@@ -1,20 +1,12 @@
 import React from 'react';
-import Summary from './Summary';
+import Home from './Home';
 import { shallow } from 'enzyme';
 
-describe('Summary', () => {
+describe('Home', () => {
   let wrapper;
-  let mockObject;
-
+  
   beforeEach(() => {
-
-    mockObject = {
-      name: 'Cat',
-      homeworld: 'Tatooine',
-      population: '5'
-    };
-
-    wrapper = shallow(<Summary film={mockObject} />);
+    wrapper = shallow(<Home/>);
   });
 
   it('should exist', () => {

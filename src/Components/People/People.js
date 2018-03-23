@@ -20,7 +20,7 @@ const People = ({info, setFavorites}) => {
 };
 
 People.propTypes = {
-  info: PropTypes.func,
+  info: PropTypes.array,
   setFavorites: PropTypes.func
 };
 

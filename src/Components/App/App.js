@@ -22,41 +22,24 @@ class App extends Component {
 
   async componentDidMount() {
     const film = await getMovieData();
-    // const people = await getPeopleData();
-    // const planets = await getPlanetData();
-    // const vehicles = await getVehicleData();
+
     this.setState({
       film: film, 
-      // people: people, 
-      // planets: planets, 
-      // vehicles: vehicles,
       isloaded: true
     }); 
   }
 
   setInfo = async (dataType) => {
-    const people = await getPeopleData();
-    const planets = await getPlanetData();
-    const vehicles = await getVehicleData();
+    const map = {
+      'people': await getPeopleData(),
+      'planets': await getPlanetData(),
+      'vehicles': await getVehicleData()
+    };
+    const fetchCall = await map[dataType];
     this.setState({
-      info: this.state[dataType],
-      people: people,
-      planets: planets,
-      vehicles: vehicles
+      [dataType]:fetchCall
     });
-  };
-
-  // setInfo = async (dataType) => {
-  //   const map = {
-  //     'people': await getPeopleData(),
-  //     'planets': await getPlanetData(),
-  //     'vehicles': await getVehicleData()
-  //   };
-  //   const fetchCall = await map[dataType];
-  //   this.setState({
-  //     [dataType]:fetchCall
-  //   });
-  // }
+  }
 
   setFavorites = (category) => {
     let favorites = [...this.state.favorites];
@@ -85,7 +68,7 @@ class App extends Component {
               <Nav setInfo={this.setInfo}/>
               <NavLink to='/favorites'>View Favorites: <span>{this.state.favorites.length}</span></NavLink>
               <Route exact path='/' component={Home} />
-              <CardContainer 
+              <CardContainer
                 people={this.state.people}
                 planets={this.state.planets}
                 vehicles={this.state.vehicles}
@@ -98,5 +81,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

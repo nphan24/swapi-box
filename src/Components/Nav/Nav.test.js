@@ -4,12 +4,19 @@ import { shallow } from 'enzyme';
 
 describe('Nav', () => {
   let wrapper;
+  let mockFunction
 
   beforeEach(() => {
-    wrapper = shallow(<Nav />);
+    mockFunction= jest.fn();
+
+    wrapper = shallow(<Nav setInfo={mockFunction} />);
   });
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
+  });
+
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 });
