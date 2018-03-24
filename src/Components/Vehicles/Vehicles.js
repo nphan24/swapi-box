@@ -2,13 +2,15 @@ import React from 'react';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const Vehicles = ({ info, setFavorites }) => {
+const Vehicles = ({ info, setFavorites, favorites }) => {
 
   const displayCards = info.map((vehicle) => {
+    const favClass = favorites.includes(vehicle) ? 'favorite' : '';
     return <Card 
       key={vehicle.name} 
       info={vehicle} 
       setFavorites={setFavorites}
+      favClass={favClass}
     />;
   });
 
@@ -21,7 +23,8 @@ const Vehicles = ({ info, setFavorites }) => {
 
 Vehicles.propTypes = {
   info: PropTypes.array,
-  setFavorites: PropTypes.func
+  setFavorites: PropTypes.func,
+  favorites: PropTypes.array
 };
 
 export default Vehicles;
