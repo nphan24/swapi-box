@@ -16,7 +16,8 @@ describe('Planets', () => {
     }];
 
     mockFunction = jest.fn();
-    wrapper = shallow(<Planets info={mockArray} setFavorites={mockFunction} />);
+    wrapper = shallow(<Planets info={mockArray} setFavorites={mockFunction} 
+    favorites={mockArray}/>);
   });
 
   it('should exist', () => {

@@ -13,19 +13,31 @@ const CardContainer = ({ people, planets, vehicles, setFavorites, favorites }) =
       <Switch>
         <Route 
           path='/people' 
-          component={() => <People info={people} setFavorites={setFavorites}/>}
+          component={() => <People 
+            info={people} 
+            setFavorites={setFavorites}
+            favorites={favorites}/>}
         />
         <Route
           exact path='/planets'
-          component={() => <Planets info={planets} setFavorites={setFavorites}/>}
+          component={() => <Planets 
+            info={planets} 
+            setFavorites={setFavorites}
+            favorites={favorites}/>}
         />
         <Route
           path='/vehicles'
-          component={() => <Vehicles info={vehicles} setFavorites={setFavorites} />}
+          component={() => <Vehicles 
+            info={vehicles} 
+            setFavorites={setFavorites}
+            favorites={favorites}/>}
         />
         <Route
           exact path='/favorites'
-          component={() => <Favorites info={favorites} setFavorites={setFavorites} />}
+          component={() => <Favorites 
+            info={favorites} 
+            setFavorites={setFavorites}
+            favorites={favorites}/>}
         />
       </Switch>
     </div>
@@ -33,10 +45,10 @@ const CardContainer = ({ people, planets, vehicles, setFavorites, favorites }) =
 };
 
 CardContainer.propTypes = {
-  people: PropTypes.object,
-  planets: PropTypes.object,
-  vehicles: PropTypes.object,
-  favorites: PropTypes.object,
+  people: PropTypes.array,
+  planets: PropTypes.array,
+  vehicles: PropTypes.array,
+  favorites: PropTypes.array,
   setFavorites: PropTypes.func
 };
 

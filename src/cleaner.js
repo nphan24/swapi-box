@@ -13,23 +13,24 @@ const cleanPeopleData = async (peopleArray) => {
   return peopleObject;
 };
 
-const getHomeWorld = async (peopleArray) => {
+const getHomeWorld = (peopleArray) => {
   try {
-    const unresolvedPeople = await peopleArray.map(async (person) => {
+    const unresolvedPeople = peopleArray.map(async (person) => {
       const response = await fetch(person.homeworld);
       const data = await response.json();
       const { name, population } = data;
       return ({ ...person, homeworld: name, population });
     });
-    return Promise.all(unresolvedPeople);
+    const unresolved = Promise.all(unresolvedPeople);
+    return unresolved;
   } catch (error) {
     return 'error';
   }
 };
 
-const getSpecies = async (peopleArray) => {
+const getSpecies = (peopleArray) => {
   try {
-    const unresolvedPeople = await peopleArray.map(async (person) => {
+    const unresolvedPeople = peopleArray.map(async (person) => {
       const response = await fetch(person.species);
       const speciesData = await response.json();
       return ({

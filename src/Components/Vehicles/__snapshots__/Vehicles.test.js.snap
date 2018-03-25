@@ -5,6 +5,15 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Vehicles
+    favorites={
+        Array [
+            Object {
+              "homeworld": "Tatooine",
+              "name": "Cat",
+              "population": "5",
+            },
+          ]
+    }
     info={
         Array [
             Object {
@@ -30,6 +39,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Card
+          favClass="favorite"
           info={
                     Object {
                               "homeworld": "Tatooine",
@@ -49,6 +59,7 @@ ShallowWrapper {
         "key": "Cat",
         "nodeType": "function",
         "props": Object {
+          "favClass": "favorite",
           "info": Object {
             "homeworld": "Tatooine",
             "name": "Cat",
@@ -71,6 +82,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Card
+            favClass="favorite"
             info={
                         Object {
                                     "homeworld": "Tatooine",
@@ -90,6 +102,7 @@ ShallowWrapper {
           "key": "Cat",
           "nodeType": "function",
           "props": Object {
+            "favClass": "favorite",
             "info": Object {
               "homeworld": "Tatooine",
               "name": "Cat",
