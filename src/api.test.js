@@ -2,8 +2,8 @@ import { mockFilm,
   expectedMockFilm, 
   mockPeopleData, 
   expectedMockPeopleData, 
-  mockPlanetData, 
-  expectedMockPlanetData, 
+  mockPlanetData,
+  expectedWholeMockPlanetData, 
   mockVehicleData, 
   expectedMockVehicleData } from './mockData';
 import { getMovieData, 
@@ -147,9 +147,8 @@ describe('getPlanetData', () => {
         resolve(mockPlanetData);
       })
     }));
-    const result = await getPlanetData();
-    expect(result).toEqual(expectedMockPlanetData);
-  });
+    await expect(getPlanetData()).resolves.toEqual[(expectedWholeMockPlanetData)];
+  });///////WHATTTTT??? BRACKETS ON THE OUTSIDE?
 });
 
 describe('getVehicleData', () => {
