@@ -7,14 +7,14 @@ export const mockFilm = {
   "release_date": "2015-12-11"
 };
 
-export const expectmockFilm = {
+export const expectedMockFilm = {
   "title": "The Force Awakens",
-  "release_date": "2015-12-11",
-  "opening_crawl": "Luke Skywalker has vanished.",
-  "episode_id": 7
+  "episode": 7,
+  "text": "Luke Skywalker has vanished.",
+  "date": "2015-12-11"
 };
 
-export const mockPeopleData = [{
+export const mockPeopleData = {results:[{
   'birth_year': "19BBY",
   'created': "2014-12-09T13:50:51.644000Z",
   'edited': "2014-12-20T21:17:56.891000Z",
@@ -27,35 +27,40 @@ export const mockPeopleData = [{
   'mass': "77",
   'name': "Luke Skywalker",
   'skin_color': "fair",
- 'species': ["https://swapi.co/api/species/1/"],
+  'species': ["https://swapi.co/api/species/1/"],
   'starships':["https://swapi.co/api/starships/12/", "https://swapi.co/api/starships/22/"],
   'url': "https://swapi.co/api/people/1/",
   'vehicles': ["https://swapi.co/api/vehicles/14/", "https://swapi.co/api/vehicles/30/"]
-}];
+}]};
 
-export const expectMockPeopleData = [
+export const expectedMockPeopleData = [{ "homeworld": undefined, 
+  "name": "Luke Skywalker", 
+  "population": undefined, 
+  "species": undefined }];
 
-];
-
-export const mockPlanetData = [{
+export const mockPlanetData = {results:[{
   "climate": "temperate",
   "created": "2014-12-10T11:35:48.479000Z",
   "diameter": "12500",
   "edited": "2014-12-20T20:58:18.420000Z",
   "films": ["https://swapi.co/api/films/6/", "https://swapi.co/api/films/1/"],
- " gravity": "1 standard",
+  " gravity": "1 standard",
   "name": "Alderaan",
   "population": "2000000000",
   "residents": ["https://swapi.co/api/people/5/", "https://swapi.co/api/people/68/", "https://swapi.co/api/people/81/"],
   "terrain": "grasslands, mountains",
- " url": "https://swapi.co/api/planets/2/"
+  " url": "https://swapi.co/api/planets/2/"
+}]};
+
+export const expectedMockPlanetData = [{
+  "climate": "temperate",
+  "name": "Alderaan",
+  "population": "2000000000",
+  "residents": [undefined, undefined, undefined],
+  "terrain": "grasslands, mountains"
 }];
 
-export const expectPlanetData = [
-  
-];
-
-export const mockVehicleData = [{
+export const mockVehicleData = {results:[{
   "cargo_capacity":"50000",
   "consumables": "2 months",
   "cost_in_credits":"150000",
@@ -69,10 +74,13 @@ export const mockVehicleData = [{
   "passengers":"30",
   "url": "https://swapi.co/api/vehicles/4/",
   "vehicle_class":"wheeled"
+}]};
+
+export const expectedMockVehicleData = [{
+  "name": "Sand Crawler",
+  "model": "Digger Crawler",
+  "class": "wheeled",
+  "passengers": "30"
 }];
-
-export const expectVehicleData = [
-
-];
 
 

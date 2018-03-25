@@ -4,7 +4,10 @@ import CardContainer from '../CardContainer/CardContainer';
 import Nav from '../Nav/Nav';
 import Summary from '../Summary/Summary';
 import Home from '../Home/Home';
-import { getMovieData, getPeopleData, getPlanetData, getVehicleData } from '../../api';
+import { getMovieData, 
+  getPeopleData, 
+  getPlanetData, 
+  getVehicleData } from '../../api';
 import './App.css';
 
 class App extends Component {
@@ -21,7 +24,8 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const film = await getMovieData();
+    const randomNumber = Math.floor((Math.random() * 7) + 1);
+    const film = await getMovieData(randomNumber);
 
     this.setState({
       film: film, 
@@ -66,7 +70,10 @@ class App extends Component {
             <div className='right-side'>
               <h1 className="main-title">Swapi-Box</h1>
               <Nav setInfo={this.setInfo}/>
-              <NavLink to='/favorites'>View Favorites: <span>{this.state.favorites.length}</span></NavLink>
+              <NavLink to='/favorites'>
+                View Favorites: 
+                <span>{this.state.favorites.length}</span>
+              </NavLink>
               <Route exact path='/' component={Home} />
               <CardContainer
                 people={this.state.people}

@@ -1,10 +1,12 @@
-import { cleanMovieData, cleanPeopleData, cleanPlanetData, cleanVehicleData } from './cleaner.js';
+import { cleanMovieData, 
+  cleanPeopleData, 
+  cleanPlanetData, 
+  cleanVehicleData } from './cleaner.js';
 
 const root = 'https://swapi.co/api/';
 
-const getMovieData = async () => {
+const getMovieData = async (randomNumber) => {
   try {
-    const randomNumber = Math.floor((Math.random() * 7) + 1);
     const response = await fetch(`${root}films/${randomNumber}`);
     const data = await response.json();
     const movieData = cleanMovieData(data);
@@ -45,7 +47,7 @@ const getVehicleData = async () => {
   } catch (error) {
     return 'error';
   }
-}
+};
 
 export { getMovieData, getPeopleData, getPlanetData, getVehicleData };
 
