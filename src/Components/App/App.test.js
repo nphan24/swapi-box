@@ -5,39 +5,22 @@ import { shallow } from 'enzyme';
 
 describe('App', () => {
   let wrapper;
-  let mockFunction;
-  let mockArray;
-  let mockObject;
 
-  beforeEach(()=> {
-    mockFunction = jest.fn();
-    mockArray = [{
-      name: 'Cat',
-      homeworld: 'Tatooine',
-      population: '5'
-    },
-    {
-      name:'dog',
-      homeworld: 'Earth',
-      population: '10'
-    }];
-  });
-
-  mockObject = {
-    name: 'Cat',
-    homeworld: 'Tatooine',
-    population: '5'
-  };
-
-  window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-    ok: 'true',
-    json: () => Promise.resolve([mockArray])
-  }));
-
-  it('renders without crashing', () => {
+  it('should render without crashing', () => {
     const wrapper = (<App />, {disableLifeCycleMethods: true});
     expect(wrapper).toBeDefined();
   });
+
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  
+
+
+
+});
+
 
 
 
@@ -47,5 +30,4 @@ describe('App', () => {
   //   wrapper.instance().mockComponentDidMount();
 
   // });
-});
 
