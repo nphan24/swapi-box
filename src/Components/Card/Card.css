@@ -28,7 +28,7 @@
 }
 
 .card-favorite-button:hover {
-  background-color: #E5EDFC;
+  box-shadow: 0px 0px 10px 10px green
 }
 
 .card-info {
@@ -41,5 +41,5 @@
 }
 
 .favorite {
-  background-color: yellow;
+  box-shadow: 0px 0px 10px 10px yellow
 }

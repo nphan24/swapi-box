@@ -23,3 +23,24 @@
   text-align: center;
   margin-top: 300px;
 }
+
+.fav-button {
+  border: 2px solid black;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 30px 30px 30px 30px;
+  text-decoration: none;
+  font-family: 'Pathway Gothic One', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1em;
+  color: black;
+}
+
+.fav-button:hover {
+  box-shadow: 0px 0px 10px 10px green; 
+}
+
+.active {
+  color: #E6C85D;
+}

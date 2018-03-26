@@ -16,7 +16,10 @@ describe('Favorites', () => {
     }];
 
     mockFunction = jest.fn();
-    wrapper = shallow(<Favorites info={mockArray} setFavorites={mockFunction} />);
+    wrapper = shallow(<Favorites 
+      info={mockArray} 
+      setFavorites={mockFunction} 
+    />);
   });
 
   it('should exist', () => {

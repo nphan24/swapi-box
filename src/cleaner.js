@@ -89,5 +89,13 @@ const cleanVehicleData = async (vehiclesArray) => {
   return modelArray;
 };
 
-export { cleanMovieData, cleanPeopleData, getHomeWorld, getSpecies, cleanPlanetData, getResidents, cleanVehicleData };
+export { 
+  cleanMovieData, 
+  cleanPeopleData, 
+  getHomeWorld, 
+  getSpecies, 
+  cleanPlanetData, 
+  getResidents, 
+  cleanVehicleData 
+};
 
