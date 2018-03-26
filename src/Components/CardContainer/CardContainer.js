@@ -6,7 +6,13 @@ import Vehicles from '../Vehicles/Vehicles';
 import Favorites from '../Favorites/Favorites';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({ people, planets, vehicles, setFavorites, favorites }) => {
+const CardContainer = ({ 
+  people, 
+  planets, 
+  vehicles, 
+  setFavorites, 
+  favorites 
+}) => {
   
   return (
     <div>

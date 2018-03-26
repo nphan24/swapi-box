@@ -41,7 +41,8 @@ export const mockPeopleData = {results:[{
     ["https://swapi.co/api/vehicles/14/", "https://swapi.co/api/vehicles/30/"]
 }]};
 
-export const expectedMockPeopleData = [{ "homeworld": undefined, 
+export const expectedMockPeopleData = [{ 
+  "homeworld": undefined, 
   "name": "Luke Skywalker", 
   "population": undefined, 
   "species": undefined }];

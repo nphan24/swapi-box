@@ -3,15 +3,21 @@ import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
 const Planets = ({ info, setFavorites, favorites }) => {
-  const displayCards = info.map((planet, index) => {
-    const favClass = favorites.includes(planet) ? 'favorite' : '';
-    return <Card 
-      key={index} 
-      info={planet} 
-      setFavorites={setFavorites}
-      favClass={favClass}
-    />;
-  });
+  let displayCards;
+
+  if (info.length === 0) {
+    displayCards = (<p>Loading...</p>);
+  } else {
+    displayCards = info.map((planet, index) => {
+      const favClass = favorites.includes(planet) ? 'favorite' : '';
+      return <Card 
+        key={index} 
+        info={planet} 
+        setFavorites={setFavorites}
+        favClass={favClass}
+      />;
+    });
+  }
 
   return (
     <div className='card-container'>

@@ -1,7 +1,9 @@
-import { cleanMovieData, 
+import { 
+  cleanMovieData, 
   cleanPeopleData, 
   cleanPlanetData, 
-  cleanVehicleData } from './cleaner.js';
+  cleanVehicleData 
+} from './cleaner.js';
 
 const root = 'https://swapi.co/api/';
 
@@ -49,7 +51,12 @@ const getVehicleData = async () => {
   }
 };
 
-export { getMovieData, getPeopleData, getPlanetData, getVehicleData };
+export { 
+  getMovieData, 
+  getPeopleData, 
+  getPlanetData, 
+  getVehicleData 
+};
 
 
 

@@ -25,7 +25,7 @@ describe('Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should create a new card for every element with the correct number of keys', () => {
+  it('should create the correct number of keys for every element', () => {
     expect(wrapper.find('p').length).toEqual(2);
   });
 

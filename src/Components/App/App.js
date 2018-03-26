@@ -15,7 +15,7 @@ class App extends Component {
     super();
     this.state = {
       favorites: [],
-      film: [],
+      film: {},
       people: [],
       planets: [],
       vehicles: [],
@@ -57,7 +57,6 @@ class App extends Component {
   };
 
   render() {
-    const { film } = this.state;
 
     return (
       !this.state.isloaded ? 
@@ -66,13 +65,12 @@ class App extends Component {
         </div> :
         <div className="App">
           <div className='to-flex'>
-            <Summary film={film}/>
+            <Summary film={this.state.film}/>
             <div className='right-side'>
               <h1 className="main-title">Swapi-Box</h1>
               <Nav setInfo={this.setInfo}/>
-              <NavLink to='/favorites'>
-                View Favorites: 
-                <span>{this.state.favorites.length}</span>
+              <NavLink to='/favorites' className='fav-button'>
+                View Favorites: <span>{this.state.favorites.length}</span>
               </NavLink>
               <Route exact path='/' component={Home} />
               <CardContainer
@@ -88,6 +86,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

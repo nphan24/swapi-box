@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('Nav', () => {
   let wrapper;
-  let mockFunction
+  let mockFunction;
 
   beforeEach(() => {
     mockFunction= jest.fn();

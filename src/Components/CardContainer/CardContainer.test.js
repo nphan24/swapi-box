@@ -16,7 +16,10 @@ describe('CardContainer', () => {
     }];
 
     mockFunction = jest.fn();
-    wrapper = shallow(<CardContainer info={mockArray} setFavorites={mockFunction} />);
+    wrapper = shallow(<CardContainer 
+      info={mockArray} 
+      setFavorites={mockFunction} 
+    />);
   });
 
   it('should exist', () => {

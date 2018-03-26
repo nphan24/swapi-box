@@ -1,15 +1,19 @@
-import { mockFilm, 
+import { 
+  mockFilm, 
   expectedMockFilm, 
   mockPeopleData, 
   expectedMockPeopleData, 
   mockPlanetData,
   expectedWholeMockPlanetData, 
   mockVehicleData, 
-  expectedMockVehicleData } from './mockData';
-import { getMovieData, 
+  expectedMockVehicleData 
+} from './mockData';
+import { 
+  getMovieData, 
   getPeopleData, 
   getPlanetData, 
-  getVehicleData } from './api';
+  getVehicleData 
+} from './api';
 
 describe('getMovieData', () => {
 
@@ -37,7 +41,7 @@ describe('getMovieData', () => {
     expect(window.fetch).toHaveBeenCalledWith(expectedParams);
   });
 
-  it('should throw an error if fetching fails', async () => {
+  it('should throw an error if fails to fetch film', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.reject({
       status: 500
     }));
@@ -84,7 +88,7 @@ describe('getPeopleData', () => {
     expect(window.fetch).toHaveBeenCalledWith(expectedParams);
   });
 
-  it('should throw an error if fetching fails', async () => {
+  it('should throw an error if fails to fetch people', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.reject({
       status: 500
     }));
@@ -147,7 +151,8 @@ describe('getPlanetData', () => {
         resolve(mockPlanetData);
       })
     }));
-    await expect(getPlanetData()).resolves.toEqual[(expectedWholeMockPlanetData)];
+    const func = getPlanetData();
+    await expect(func).resolves.toEqual[(expectedWholeMockPlanetData)];
   });///////WHATTTTT??? BRACKETS ON THE OUTSIDE?
 });
 

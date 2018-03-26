@@ -4,15 +4,21 @@ import PropTypes from 'prop-types';
 import './People.css';
 
 const People = ({ info, setFavorites, favorites }) => {
-  const displayCards = info.map((people) => {
-    const favClass = favorites.includes(people) ? 'favorite' : '';
-    return <Card 
-      key={people.name} 
-      info={people} 
-      setFavorites={setFavorites}
-      favClass={favClass}
-    />;
-  });
+  let displayCards;
+
+  if ( info.length === 0) {
+    displayCards = (<p>Loading...</p>);
+  } else {
+    displayCards = info.map((people) => {
+      const favClass = favorites.includes(people) ? 'favorite' : '';
+      return <Card 
+        key={people.name} 
+        info={people} 
+        setFavorites={setFavorites}
+        favClass={favClass}
+      />;
+    });
+  }
 
   return (
     <div className='card-container'>
